@@ -112,6 +112,7 @@ class Device:
             serial_number = device["result"]["deviceSN"]
 
         data = Data("device_generation")
+        data.disable_cache()  # We always want the latest generation data
         data.set_params(
             {
                 "sn": serial_number,
